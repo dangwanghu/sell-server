@@ -1,0 +1,20 @@
+{
+  "preset": "node-style-guide",
+  "validateIndentation": 4,
+  "maximumLineLength": 200,
+  "esnext": true,
+  "verbose": true,
+  "requireTrailingComma": null,
+  "validateQuoteMarks" : null,
+  "validateLineBreaks" : null,
+  "disallowSpaceAfterObjectKeys" : null,
+  "requireCamelCaseOrUpperCaseIdentifiers" : null,
+  "disallowQuotedKeysInObjects" : null,
+  "disallowKeywordsOnNewLine" : null,
+  "requireCapitalizedComments" : null,
+  "requireCurlyBraces" : null,
+  "requireEarlyReturn" : null,
+  "excludeFiles": [
+    "node_modules/**"
+  ]
+}

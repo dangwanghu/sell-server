@@ -1,0 +1,54 @@
+[
+  {
+    "name": "解忧，发送用户新来信到外援服务端--供抢单",
+    "client": "解忧杂货店",
+    "server": "外援",
+    "version": "1.1",
+    "url": "106.75.13.17/api/v1.1/session/order/distribute",
+    "method": "POST",
+    "request params": {
+      "user" : "object",  // 用户
+      "mail" : "object",  // 信件
+      "isFirstTime" : "boolean" // 是否是第一次来信
+    },
+    "response body ok": {
+      "statusCode": 200,
+      "message": "成功消息"
+    },
+    "response body error": {
+      "statusCode": 501,
+      "message": "业务错误消息",
+      "error": "HTTP错误消息"
+    }
+  },
+  {
+    "name": "外援，发送分信数据到解忧：未被抢的用户、未被及时回复的用户",
+    "client": "外援",
+    "server": "解忧杂货店",
+    "version": "1.1",
+    "url": "解忧杂货店提供",
+    "method": "POST",
+    "request params": {
+      "freeUserList": ["_id", "_id", "..."], // 未被抢的用户ID列表
+      "notReplyUserList": ["_id", "_id", "..."] // 未被及时回复的用户ID列表
+    },
+    "response body ok": "解忧杂货店提供",
+    "response body error": "解忧杂货店提供"
+  },
+  {
+    "name": "外援，发送已回复并审核过的信件到解忧（审核通过/不通过）",
+    "client": "外援",
+    "server": "解忧杂货店",
+    "version": "1.1",
+    "url": "解忧杂货店提供",
+    "method": "POST",
+    "request params": {
+      "mailId": "string", // 用户的来信ID
+      "content": "text", // 外援回复的内容
+      "pass": "boolean", // 是否通过审核
+      "assistantId" : "string" // 外援ID
+    },
+    "response body ok": "解忧杂货店提供",
+    "response body error": "解忧杂货店提供"
+  }
+]
